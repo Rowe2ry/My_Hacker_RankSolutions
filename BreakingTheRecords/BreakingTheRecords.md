@@ -34,9 +34,9 @@ int[2]: An array with the numbers of times she broke her records. Index **0** is
 
 The first line contains an integer *n*, the number of games.
 The second line contains *n* space-separated integers describing the respective values of
-*score(0),score(1),...,score(n-1)*.
+*score<sub>0</sub> ,score<sub>1</sub> ,...,score<sub>n-1</sub>*.
 
 ## Constraints
 
 * i ≤ *n* ≤ 1000
-* 0 ≥ scores[ *i* ] ≤ 10^8
+* 0 ≥ scores[ *i* ] ≤ 10<sup>8</sup>
