@@ -33,7 +33,7 @@ function closestNumbers(arr) {
     // Write your code here
 // Write your code here
     const sortArr = arr.sort((a,b) => a-b);
-    let smallestDiff = Number.MIN_VALUE;
+    let smallestDiff = Number.MAX_VALUE;
     let outArr = [];
     for (let i = 0; i < arr.length - 1; i++){
         console.log(`index: ${i}`)
