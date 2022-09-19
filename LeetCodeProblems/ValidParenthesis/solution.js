@@ -8,7 +8,7 @@
     
     • will return something like ()[]{}() to true => good
     • will catch nested pairs like ((([[{[]}]])))[[{{}}]] to true => good
-    • gets caught on things like ((())[]) and says false, but the algorythm the'yre looking for would call this true
+    • gets caught on things like ((())[]) and says false, but the algorythm they're looking for would call this true
 
     does fail bad arrays }( etc
  * ======================================================== */
@@ -96,9 +96,10 @@
     let stk = new Array();
 
     for (let i = 0; i < s.length; i++) {
-        if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+        if (s[i] == '(' || s[i] == '{' || s[i] == '[') { // build up stack with any opening parenthesis character
             stk.push(s[i]);
         }
+        //  for all "else if" conditions take off last thing, it should be corresponding closing pair
         else if ((s[i] == ')' && stk.pop() == '(')) {
             continue;
         } else if ((s[i] == '}' && stk.pop() == '{')) {
@@ -109,10 +110,12 @@
             return false;
         }
     }
-
+    
+    // we should have built up and completely tore back down the stack, if anyhting is left, it was invalid 
     if (stk.length != 0) {
         return false;
     }
 
+    // passed all tests
     return true;
 };
