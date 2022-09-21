@@ -11,8 +11,8 @@ You have to figure out a way to get both kangaroos at the same location at the s
 
 *x*1 = 2
 *v*1 = 1
-*x*2 = 2
-*v*2 =2
+*x*2 = 1
+*v*2 = 2
 
 After one jump, they are both at *x* = 3, (*x*1 + *v*1 = 2 + 1, *x*2 + *v*2 = 1 + 2), so the answer is YES.
 

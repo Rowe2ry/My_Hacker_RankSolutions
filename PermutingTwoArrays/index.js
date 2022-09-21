@@ -33,15 +33,14 @@ function readLine() {
  */
 
 function twoArrays(k, A, B) {
-    // Write your code here
-    const sortedA = A.sort((a,b) => a-b);
-    const sortedB = B.sort((a,b) => a-b);
-    for (let i = 0; i< A.length ; i++) {
-        if (A[i] + B[B.length - (i + 1)] < k) {
+    A.sort((a,b) => a-b); // ascending
+    B.sort((a,b) => b-a); // descending
+    for (let i = 0; i< A.length ; i++) { // loop through
+        if (A[i] + B[i] < k) { // smallest from A plus biggest from b less than k?
             return "NO";
         };
     };
-    return 'YES'
+    return 'YES';
 }
 
 function main() {
