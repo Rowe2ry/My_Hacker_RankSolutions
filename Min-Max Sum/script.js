@@ -27,29 +27,11 @@ function readLine() {
  */
 
 function miniMaxSum(arr) {
-    // Write your code here
-    let runningTotal = 0; // start with zero
-    for (let i = 0; i < arr.length; i++) {
-        runningTotal= runningTotal + arr[i]; // add all elements of the array
-    };
-    //console.log(runningTotal);
-    let lowestSoFar = runningTotal; // set to the max possible value
-    let highestSoFar = 0; // set to the lowest possible value
-    for (let i = 0; i < arr.length; i++ ) {
-        var tempLowCheck = runningTotal - arr[i]; // all 5 ints minus this one
-        var tempHighCheck = runningTotal - arr[i]; // all 5 ints minus this one
-        if (tempLowCheck <= lowestSoFar) {
-            lowestSoFar = tempLowCheck;
-            //console.log('the lowest right now is ' + lowestSoFar)
-        };
-        if (tempHighCheck >= highestSoFar) {
-            highestSoFar = tempLowCheck;
-            //console.log('the highestest right now is ' + highestSoFar)
-        };
-    };
-    const output = lowestSoFar + ' ' + highestSoFar;
-    console.log(output);
-    return output;
+    arr.sort((a,b) => a - b);
+    const total = arr.reduce((a,b) => a + b);
+    const max = total - arr[0];
+    const min = total - arr[4];
+    console.log(`${min} ${max}`);
 };
 
 function main() {
