@@ -31,29 +31,24 @@ function readLine() {
 
 function gradingStudents(grades) {
     // Write your code here
-    //console.log('the nubmer of grades is ' + grades[0]);
     const roundedGrades = [];
-    for (let i = 0; i < grades.length; i++) {
-        if (grades[i] >= 98) {
-            //console.log('triggered round to 100 on index: ' + i)
+    for (const grade of grades) {
+        if (grade >= 98) {
             roundedGrades.push(100);
-        } else if (grades[i] > 37) {
-            //console.log('triggered greater than 37 on index ' + i);
-            let gradePlus2 = grades[i] + 2;
-            let gradePlus1 = grades[i] + 1;
+        } else if (grade > 37) {
+            let gradePlus2 = grade + 2;
+            let gradePlus1 = grade + 1;
             if (gradePlus2 % 5 === 0) {
-                //console.log('grade plus two divisible by 5 on index ' + i);
                 roundedGrades.push(gradePlus2);
             } else if ((gradePlus1) % 5 === 0){
-                //console.log('grade plus one divisible by 5 on index ' + i);
                 roundedGrades.push(gradePlus1);
             } else {
-                //console.log('cant round up on index ' + i);
-                roundedGrades.push(grades[i]);
+                // cannot round up, preserve grade as-is
+                roundedGrades.push(grade);
             };
         } else {
             //console.log('triggered no round because fail on index ' + i);
-            roundedGrades.push(grades[i]);
+            roundedGrades.push(grade);
         };  
     };
     return roundedGrades;
