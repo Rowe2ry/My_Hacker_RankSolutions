@@ -34,14 +34,12 @@ function readLine() {
 
 function divisibleSumPairs(n, k, ar) {
     // Write your code here
-    let pairsCount = 0;
-    for (let i = 0; i < n; i++){
-        for (let j = 0; j < n; j++) {
-                if (i < j) {
-                    if (((ar[i] + ar[j]) % k) === 0) {
-                        pairsCount++;
-                    };
-                };
+    let pairsCount = 0; // start with none
+    for (let i = 0; i < n; i++) { // grab an element
+        for (let j = i + 1; j < n; j++) { // look at all the following as a comparison
+            if (((ar[i] + ar[j]) % k) === 0) { // sum and modulo the constant
+                pairsCount++; // increase each time the test passes
+            };
         };
     };
     return pairsCount;

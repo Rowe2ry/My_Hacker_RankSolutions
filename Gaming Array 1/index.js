@@ -62,7 +62,7 @@ function readLine() {
 
 // TODO: I didn't actually write this one. The 2 commented out ones above had good logic and worked, but weren't efficient enough.
 function gamingArray(arr) {
-    let m = 0
+    let m = 0 // maximum
     return (arr.reduce((c,v) => v>m ? (m=v, c+1) : c, 0)) % 2 ? 'BOB' : 'ANDY'
 }
 

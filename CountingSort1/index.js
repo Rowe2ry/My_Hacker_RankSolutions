@@ -31,14 +31,12 @@ function readLine() {
 
 function countingSort(arr) {
     // Write your code here
-    let newArr = []
-    for (let i = 0; i < 100 ; i++) {
-        newArr[i] = 0;
-    };
+    const newArr = Array(100).fill(0);
+    // creats a 100 element array all initialized at 0
     
-    for (let i = 0; i < arr.length ; i++) {
-       let thisNum = arr[i];
-       newArr[thisNum]++; 
+    // iterate through input array and add 1 to the index that matches the value
+    for (elm of arr) {
+       newArr[elm]++; 
     };
 
     return newArr;

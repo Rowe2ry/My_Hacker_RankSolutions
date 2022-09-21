@@ -31,22 +31,16 @@ function readLine() {
 
 function closestNumbers(arr) {
     // Write your code here
-// Write your code here
     const sortArr = arr.sort((a,b) => a-b);
-    let smallestDiff = Number.MAX_VALUE;
+    let smallestDiff = Number.MAX_VALUE; // start with the bggest thing possible
     let outArr = [];
     for (let i = 0; i < arr.length - 1; i++){
-        console.log(`index: ${i}`)
         if (sortArr[i+1] - sortArr[i] < smallestDiff ) {
-            outArr = [];
-            smallestDiff = sortArr[i +1] - sortArr[i];
-            outArr.push(sortArr[i]),
-            outArr.push(sortArr[i + 1]);
-            console.log(`less than, outArr now: ${outArr}`)
+            outArr = [sortArr[i],sortArr[i + 1]]; // we found something smaller, clear the array and assign it the value of just these 2 things
+            smallestDiff = sortArr[i +1] - sortArr[i]; // new metric to measure against
         } else if (sortArr[i+1] - sortArr[i] === smallestDiff ) {
             outArr.push(sortArr[i]),
             outArr.push(sortArr[i + 1]);
-            console.log(`equals to, outArr now: ${outArr}`)
         };
     };
     return outArr;
