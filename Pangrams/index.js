@@ -35,20 +35,15 @@ function pangrams(s) {
     const charList = s.split('');
     let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', undefined];
     charList.forEach(char => {
-        console.log(`char is ${char}`)
         if (char !== ' ') {
-            // console.log('not a space');
-            if (alphabet.includes(char.toLowerCase())) {
-                // console.log('thats in the string')
-                const indexNum = alphabet.indexOf(char.toLowerCase());
-                alphabet.splice(indexNum,1);
-                // console.log(`alphabet array is now ${alphabet}`);
+            const thisChar = char.toLowerCase();
+            if (alphabet.includes(thisChar)) {
+                const indexNum = alphabet.indexOf(thisChar);
+                alphabet.splice(indexNum,1); // remove from character pool
             };
         };
     });
-    // console.log(`this is the type at the moment: ${typeof(alphabet[0])}`)
-    typeof(alphabet[0]) == 'string' ? result = 'not pangram' : result ='pangram';
-    // console.log(`this is now ${alphabet[0]}`);
+    typeof(alphabet[0]) == 'string' ? result = 'not pangram' : result ='pangram'; // if any letters left, we didn't use it. When we use them all, our alphabet array whould have 1 element at index zero (undefined)
     return result;
 };
 

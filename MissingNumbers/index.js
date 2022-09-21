@@ -2,9 +2,8 @@ function missingNumbers(arr, brr) {
     // Write your code here
     arr.sort((a,b) => a-b);
     brr.sort((a,b) => a-b);
-    loops = brr.length;
     const answers = [];
-    for (let i = 0; i < loops; i++) {
+    for (let i = 0; i < brr.length; i++) {
         if (arr[0] !== brr[0]) {
             if (!answers.includes(brr[0])) {
                 answers.push(brr[0]);
